@@ -4,7 +4,9 @@
   "description": "f2e project sample",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --progress --watch",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,7 @@
     "css-loader": "^0.27.3",
     "html-webpack-plugin": "^2.28.0",
     "style-loader": "^0.14.1",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
