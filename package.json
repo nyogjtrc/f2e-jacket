@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "description": "f2e project sample",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:nyogjtrc/f2e-jacket.git"
   },
-  "author": "nyo"
+  "author": "nyo",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
 }
