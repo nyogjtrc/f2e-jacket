@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 
+import '../css/app.css'
 
 const Home = () => (
     <div>
