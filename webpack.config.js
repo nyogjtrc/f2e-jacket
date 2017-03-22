@@ -2,10 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
-    entry: ['./src/js/app.js', './src/css/app.css'],
+    entry: ['./src/js/index.js', './src/css/app.css'],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.js'
+        filename: 'app.bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -25,7 +26,17 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({template: './src/index.html'})
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        historyApiFallback: {
+            disableDotRule: true
+        },
+        watchOptions: {
+            ignored: /node_modules/
+        },
+    }
 }
 
 module.exports = config
