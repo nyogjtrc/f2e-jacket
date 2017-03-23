@@ -4,12 +4,14 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { Dropdown, Menu } from 'semantic-ui-react'
 
 import '../css/app.css'
 
 const Home = () => (
     <div>
         <h2>Home</h2>
+            <DropdownExampleSimple />
     </div>
 )
 
@@ -19,6 +21,19 @@ const About = () => (
     </div>
 )
 
+const options = [
+  { key: 1, text: 'Choice 1', value: 1 },
+  { key: 2, text: 'Choice 2', value: 2 },
+  { key: 3, text: 'Choice 3', value: 3 },
+]
+
+const DropdownExampleSimple = () => (
+    <div className='sample'>
+        <Menu compact>
+            <Dropdown text='Dropdown' options={options} simple item />
+        </Menu>
+    </div>
+)
 
 class App extends Component {
     render() {
