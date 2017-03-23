@@ -2,6 +2,7 @@
   "name": "f2e-jacket",
   "version": "0.1.0",
   "description": "f2e project sample",
+  "license" : "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p --profile --colors",
