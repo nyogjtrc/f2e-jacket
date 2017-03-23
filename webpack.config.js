@@ -19,7 +19,16 @@ const config = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            }
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.(ttf|eot|svg|woff(2)?)$/,
+                loader: 'file-loader'
+            },
+
         ]
     },
     plugins: [
