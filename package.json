@@ -4,7 +4,7 @@
   "description": "f2e project sample",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack -p --profile --colors",
     "watch": "webpack --progress --watch",
     "start": "webpack-dev-server"
   },
