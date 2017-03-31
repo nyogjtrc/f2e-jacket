@@ -9,6 +9,7 @@ const config = {
     filename: 'app.bundle.js',
     publicPath: '/'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
