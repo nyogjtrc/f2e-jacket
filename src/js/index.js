@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './app';
-
+import React from 'react'
+import ReactDOM from 'react-dom'
 import 'semantic-ui-css/semantic.css'
 
+import App from './app'
+
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
+  <App />,
+  document.getElementById('root')
+)
