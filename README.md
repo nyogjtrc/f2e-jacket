@@ -30,3 +30,13 @@ global install package
 ```bash
 $ npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y
 ```
+
+## Other Library
+
+### semantic-ui
+
+install with semantic-ui-react and semantic-ui-css
+
+```bash
+$ yarn add semantic-ui-react semantic-ui-css
+```
