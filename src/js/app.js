@@ -4,7 +4,6 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import { connect } from 'react-redux'
 
 import Counter from './containers/Counter'
 import '../css/app.css'
@@ -39,4 +38,4 @@ const App = () => (
   </Router>
 )
 
-export default connect()(App)
+export default App
