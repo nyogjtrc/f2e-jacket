@@ -3,10 +3,12 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
-  entry: ['./src/js/index.js'],
+  entry: {
+    app: './src/js/index.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js',
+    filename: '[name].bundle.js',
     publicPath: '/'
   },
   devtool: 'source-map',
@@ -34,6 +36,12 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: module => (
+        module.context && module.context.indexOf('node_modules') !== -1
+      )
     }),
     new HtmlWebpackPlugin({ template: './src/index.html' })
   ],
