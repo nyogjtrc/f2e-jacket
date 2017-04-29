@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p --profile --colors",
+    "clear": "rm dist/*",
     "watch": "webpack --progress --watch",
     "start": "webpack-dev-server"
   },
