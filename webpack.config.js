@@ -1,8 +1,10 @@
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 const config = {
+  mode: 'production',
   entry: {
     app: './src/js/index.js'
   },
@@ -37,14 +39,20 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: module => (
-        module.context && module.context.indexOf('node_modules') !== -1
-      )
-    }),
-    new HtmlWebpackPlugin({ template: './src/index.html' })
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new CompressionPlugin({
+      filename: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
